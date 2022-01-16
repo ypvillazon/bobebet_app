@@ -65,7 +65,7 @@ class _EventCardWidget extends State<EventCardWidget> {
     super.dispose();
   }
 
-  void createBet(String teamBetName, double teamCoeff, String sport) {
+  void createBet(String teamBetName, double teamCoeff, String sportType) {
     Navigator.of(context).pop();
     setState(() {
       msg="Creando la apuesta ..." ;
@@ -75,19 +75,7 @@ class _EventCardWidget extends State<EventCardWidget> {
     /**
      * Tipo de apuestas por deporte.
      */
-    String betType = "FT_WINNING_TEAM" ;
-    if(sport == "Basketball"){
-      betType = "BK_WINNING_TEAM" ;
-    }
-    if(sport == "Baseball"){
-      betType = "BS_WINNING_TEAM" ;
-    }
-    if(sport == "Tennis") {
-      betType = "TN_WINNING_TEAM" ;
-    }
-    if(sport == "Boxing") {
-      betType = "BX_WINNING_TEAM" ;
-    }
+    String betType = sportType + "_WINNING_TEAM" ;
 
     createBetService.create(new Bet(double.parse(creditBet), event.eventId, teamBetName, teamBetName, teamCoeff, betType)).then((value) {
       if (value.statusCode == 0) {
@@ -200,14 +188,14 @@ class _EventCardWidget extends State<EventCardWidget> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        EventsWidgets.betContent(_createBetForm, e.teamHomeName, e.teamHomeCoeff, e.teamHomeCoeffUp, e.showHome, e.sport, _onMsg, (e.sport == "Baseball" || e.sport == "Basketball" || e.sport == "Tennis" || e.sport == "Boxing" ? 140 : 100)),
-                        (e.sport != "Baseball" && e.sport != "Basketball" && e.sport != "Tennis" && e.sport != "Boxing")
+                        EventsWidgets.betContent(_createBetForm, e.teamHomeName, e.teamHomeCoeff, e.teamHomeCoeffUp, e.showHome, e.sportType, _onMsg, (_sportCondicion(e) ? 140 : 100)),
+                        (_sportConditionAnd(e))
                             ?
-                               EventsWidgets.betContent(_createBetForm, "draw", e.drawCoeff, e.drawCoeffUp, e.showDraw, e.sport, _onMsg, 100)
+                               EventsWidgets.betContent(_createBetForm, "draw", e.drawCoeff, e.drawCoeffUp, e.showDraw, e.sportType, _onMsg, 100)
                             :
                                Container()
                         ,
-                        EventsWidgets.betContent(_createBetForm, e.teamAwayName, e.teamAwayCoeff, e.teamAwayCoeffUp, e.showAway,e.sport, _onMsg, (e.sport == "Baseball" || e.sport == "Basketball" || e.sport == "Tennis" || e.sport == "Boxing" ? 140 : 100)),
+                        EventsWidgets.betContent(_createBetForm, e.teamAwayName, e.teamAwayCoeff, e.teamAwayCoeffUp, e.showAway,e.sportType, _onMsg, (_sportCondicion(e) ? 140 : 100)),
                       ],
                     )
                   ]
@@ -217,6 +205,14 @@ class _EventCardWidget extends State<EventCardWidget> {
 
 
     );
+  }
+
+  _sportCondicion(e) {
+    return (e.sportType == "BS" || e.sportType == "BK" || e.sportType == "TN" || e.sportType == "BX" || e.sportType == "FA") ;
+  }
+
+  _sportConditionAnd(e) {
+    return (e.sportType != "BS" && e.sportType != "BK" && e.sportType != "TN" && e.sportType != "BX" && e.sportType != "FA");
   }
 
   _seguirApostando() async {
@@ -246,7 +242,7 @@ class _EventCardWidget extends State<EventCardWidget> {
     }
   }
 
-  _createBetForm(String teamBetName, double teamCoeff, String sport) {
+  _createBetForm(String teamBetName, double teamCoeff, String sportType) {
     showDialog(
         barrierDismissible: false,
         context: context,
@@ -297,7 +293,7 @@ class _EventCardWidget extends State<EventCardWidget> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Buttons.dialogButton(()=>{Navigator.of(context).pop()}, context, "Cancelar", Colors.redAccent),
-                                      Buttons.dialogButton(()=>{createBet(teamBetName, teamCoeff, sport)}, context, "Apostar", Colors.green)
+                                      Buttons.dialogButton(()=>{createBet(teamBetName, teamCoeff, sportType)}, context, "Apostar", Colors.green)
                                     ],
                           )
                       )

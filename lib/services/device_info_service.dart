@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:bobebet_app/preference/prefs.dart';
 import 'package:bobebet_app/services/common/rest_client_service.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:device_info/device_info.dart';
 
 class DeviceInfoService {

@@ -349,7 +349,7 @@ class _FASeguirApostandoHomePageState extends State<FASeguirApostandoHomePage> {
           accordionElement(
               event.faOptionsPuntosDtoPrimeraMitad.title,
               Icons.update,
-              PuntosDesenlace.get(event.faOptionsPuntosDtoPrimeraMitad, _createBetForm, "FA_DESENLACE_CUARTO_CON_MAS_PUNTOS", _onMsg)
+              PuntosDesenlace.get(event.faOptionsPuntosDtoPrimeraMitad, _createBetForm, "FA_DESENLACE_PRIMERA_MITAD", _onMsg)
           ) :
           Container()
           ,

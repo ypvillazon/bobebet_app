@@ -24,8 +24,15 @@ class PuntosDesenlace {
       ),
     ) ;
 
+    print("CRISTIAN ...");
+    print("CRISTIAN ...");
+    print("C: " + faPuntosDesenlace.rows.length.toString());
+    print("CRISTIAN ...");
+
     for (int i = 0; i < faPuntosDesenlace.rows.length; i++) {
+      print("I: " + i.toString());
       FAOptionPuntos faOptionPuntos = faPuntosDesenlace.rows[i];
+      print("O: " + faOptionPuntos.toString());
       widgets.add(
           SeguirApostandoSportFACardWidgetFunctions.desenlaceDosOpcionesContent(_createBetForm, faOptionPuntos, betType, _onMsg)
       );

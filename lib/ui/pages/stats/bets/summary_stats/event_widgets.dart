@@ -21,7 +21,7 @@ class BetSummaryStatsWidgets {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text( ((betSummaryStats.tags.length>40) ? betSummaryStats.tags.substring(0,40) + "..." : betSummaryStats.tags),  style: TextStyle(color: Colors.deepPurple, fontSize: 18, fontWeight: FontWeight.bold)),
+              Text( ((betSummaryStats.tags.length>40) ? betSummaryStats.tags.substring(0,40) + "..." : betSummaryStats.tags),  style: TextStyle(color: Colors.deepPurple, fontSize: 16, fontWeight: FontWeight.bold)),
             ],
           ),
           SizedBox(height: 15),

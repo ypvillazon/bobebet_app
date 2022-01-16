@@ -2,20 +2,23 @@ import 'package:bobebet_app/models/event/baseball/option_total_carreras_desenlac
 
 class EquipoEnHacerCarreras {
 
-  bool available ;
-  String title ;
-  String teamHome ;
-  String teamAway ;
-  double coeffHome ;
-  double coeffAway ;
+  late bool available ;
+  late  String title ;
+  late  String teamHome ;
+  late  String teamAway ;
+  late  double coeffHome ;
+  late  double coeffAway ;
 
-  EquipoEnHacerCarreras.fromMap(Map<String, dynamic> map) :
-    title = map['title'],
-    available = map['available'],
-    teamHome = map['teamHome'],
-    teamAway = map['teamAway'],
-    coeffHome = map['coeffHome'],
-    coeffAway = map['coeffAway'];
+  EquipoEnHacerCarreras.fromMap(Map<String, dynamic> map) {
+    if (map != null) {
+      title = map['title'];
+      available = map['available'];
+      teamHome = map['teamHome'];
+      teamAway = map['teamAway'];
+      coeffHome = map['coeffHome'];
+      coeffAway = map['coeffAway'];
+    }
+  }
 
 }
 

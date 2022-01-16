@@ -2,18 +2,26 @@ import 'package:bobebet_app/models/event/football/ganar_partido_con_handicap_asi
 
 class GanarPartidoConHandicapAsiatico {
 
-  bool available ;
-  String title ;
-  String home ;
-  String away ;
-  List<GanarPartidoConHandicapAsiaticoOption> rows ;
+  late bool available ;
+  late String title ;
+  late String home ;
+  late String away ;
+  late List<GanarPartidoConHandicapAsiaticoOption> rows ;
 
-  GanarPartidoConHandicapAsiatico.fromMap(Map<String, dynamic> map) :
-    title = map['title'],
-    available = map['available'],
-    home = map['home'],
-    away = map['away'],
-    rows = (map['rows'] != null) ? (map['rows'] as List).map((row) => GanarPartidoConHandicapAsiaticoOption.fromMap(row)).toList() : [];
+  GanarPartidoConHandicapAsiatico.fromMap(Map<String, dynamic> map) {
+    if (map != null) {
+      title = map['title'];
+      available = map['available'];
+      home = map['home'];
+      away = map['away'];
+      if (map != null && map['rows'] != null) {
+        rows = (map['rows'] as List).map((row) =>
+            GanarPartidoConHandicapAsiaticoOption.fromMap(row)).toList();
+      } else {
+        rows = [];
+      }
+    }
+  }
 
 }
 

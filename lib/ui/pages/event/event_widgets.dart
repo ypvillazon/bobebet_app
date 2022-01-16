@@ -49,10 +49,10 @@ class EventsWidgets {
 
 
 
-  static Widget betContent(onCreateForm, teamName, teamCoeff, teamCoeffUp, bool show, sport, onMsg, double width) {
+  static Widget betContent(onCreateForm, teamName, teamCoeff, teamCoeffUp, bool show, sportType, onMsg, double width) {
     return
       GestureDetector(
-        onTap: () => { (!show) ? onMsg((teamName == "draw") ? "el empate" : teamName) : onCreateForm(teamName, teamCoeff, sport) },
+        onTap: () => { (!show) ? onMsg((teamName == "draw") ? "el empate" : teamName) : onCreateForm(teamName, teamCoeff, sportType) },
         child: Container(
           height: 50,
           width: width,

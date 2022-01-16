@@ -202,135 +202,161 @@ class Event {
     time = map['time'];
     var s = DateTime.parse(map['date']).toLocal() ;
     date = "${s.year}/${s.month}/${s.day} ${s.hour}:${s.minute}:${s.second}" ;
+    print("OKOK");
 
-    coeffPerMarkerByEvent = (map['coeffPerMarkerListDto'] != null ? CoeffPerMarkerByEvent.fromMap(map['coeffPerMarkerListDto']) : null)! ;
-    firstHalfMarkers = (map['firstHalfMarkersListDto'] != null ?  CoeffPerMarkerByEvent.fromMap(map['firstHalfMarkersListDto'])  : null)! ;
-    secondHalfMarkers = (map['secondHalfMarkersListDto'] != null ?  CoeffPerMarkerByEvent.fromMap(map['secondHalfMarkersListDto'])  : null)! ;
-    tiempoConMasGoles = (map['tiempoConMasGoles'] != null ?  TiempoPorGoles.fromMap(map['tiempoConMasGoles'])  : null)! ;
-    tiempoConPrimerGol = (map['tiempoConPrimerGol'] != null ?  TiempoPorGoles.fromMap(map['tiempoConPrimerGol'])  : null)! ;
-    tiempoConMasGolesH = (map['tiempoConMasGolesH'] != null ?  TiempoPorGoles.fromMap(map['tiempoConMasGolesH'])  : null)! ;
-    tiempoConMasGolesA = (map['tiempoConMasGolesA'] != null ?  TiempoPorGoles.fromMap(map['tiempoConMasGolesA'])  : null)! ;
-    footballMargenDeVictoriaDto = (map['footballMargenDeVictoriaDto'] != null ?  FootBallMargenDeVictoriaDto.fromMap(map['footballMargenDeVictoriaDto'])  : null)! ;
+    coeffPerMarkerByEvent = CoeffPerMarkerByEvent.fromMap(map['coeffPerMarkerListDto']);
+
+    firstHalfMarkers =  CoeffPerMarkerByEvent.fromMap(map['firstHalfMarkersListDto']) ;
+    secondHalfMarkers = CoeffPerMarkerByEvent.fromMap(map['secondHalfMarkersListDto']) ;
+
+    print("OKOK2");
+
+    tiempoConMasGoles = TiempoPorGoles.fromMap(map['tiempoConMasGoles'])  ;
+    tiempoConPrimerGol =  TiempoPorGoles.fromMap(map['tiempoConPrimerGol']) ;
+    tiempoConMasGolesH =   TiempoPorGoles.fromMap(map['tiempoConMasGolesH'])  ;
+    tiempoConMasGolesA =  TiempoPorGoles.fromMap(map['tiempoConMasGolesA'])   ;
+    footballMargenDeVictoriaDto =  FootBallMargenDeVictoriaDto.fromMap(map['footballMargenDeVictoriaDto']) ;
+
+    print("OKOK");
 
 
-    paraPartido = (map['paraPartido'] != null ?  OptionsTotalGoles.fromMap(map['paraPartido'])  : null)! ;
-    paraH = (map['paraH'] != null ?  OptionsTotalGoles.fromMap(map['paraH'])  : null)! ;
-    paraA = (map['paraA'] != null ?  OptionsTotalGoles.fromMap(map['paraA'])  : null)! ;
-    paraPrimerTiempo = (map['paraPrimerTiempo'] != null ?  OptionsTotalGoles.fromMap(map['paraPrimerTiempo'])  : null)! ;
-    paraPrimerTiempoH = (map['paraPrimerTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['paraPrimerTiempoH'])  : null)! ;
-    paraPrimerTiempoA = (map['paraPrimerTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['paraPrimerTiempoA'])  : null)! ;
-    paraSegundoTiempo = (map['paraSegundoTiempo'] != null ?  OptionsTotalGoles.fromMap(map['paraSegundoTiempo'])  : null)! ;
-    paraSegundoTiempoH = (map['paraSegundoTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['paraSegundoTiempoH'])  : null)! ;
-    paraSegundoTiempoA = (map['paraSegundoTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['paraSegundoTiempoA'])  : null)! ;
+    paraPartido = OptionsTotalGoles.fromMap(map['paraPartido']) ;
+    paraH =  OptionsTotalGoles.fromMap(map['paraH'])   ;
+    paraA =  OptionsTotalGoles.fromMap(map['paraA'])   ;
+    paraPrimerTiempo =  OptionsTotalGoles.fromMap(map['paraPrimerTiempo'])   ;
+    paraPrimerTiempoH =  OptionsTotalGoles.fromMap(map['paraPrimerTiempoH'])   ;
+    paraPrimerTiempoA =  OptionsTotalGoles.fromMap(map['paraPrimerTiempoA'])   ;
+    paraSegundoTiempo =  OptionsTotalGoles.fromMap(map['paraSegundoTiempo'])   ;
+    paraSegundoTiempoH =   OptionsTotalGoles.fromMap(map['paraSegundoTiempoH'])   ;
+    paraSegundoTiempoA = OptionsTotalGoles.fromMap(map['paraSegundoTiempoA'])   ;
 
-    cornerPartido = (map['cornerPartido'] != null ?  OptionsTotalGoles.fromMap(map['cornerPartido'])  : null)! ;
-    cornerParaH = (map['cornerParaH'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaH'])  : null)! ;
-    cornerParaA = (map['cornerParaA'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaA'])  : null)! ;
-    cornerParaPrimerTiempo = (map['cornerParaPrimerTiempo'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempo'])  : null)! ;
-    cornerParaPrimerTiempoH = (map['cornerParaPrimerTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempoH'])  : null)! ;
-    cornerParaPrimerTiempoA = (map['cornerParaPrimerTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempoA'])  : null)! ;
-    cornerParaSegundoTiempo = (map['cornerParaSegundoTiempo'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempo'])  : null)! ;
-    cornerParaSegundoTiempoH = (map['cornerParaSegundoTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempoH'])  : null)! ;
-    cornerParaSegundoTiempoA = (map['cornerParaSegundoTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempoA'])  : null)! ;
+    print("OKOK 3");
 
-    tarjetasAmarillasPartido = (map['tarjetasAmarillasPartido'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasPartido'])  : null)! ;
-    tarjetasAmarillasParaH = (map['tarjetasAmarillasParaH'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaH'])  : null)! ;
-    tarjetasAmarillasParaA = (map['tarjetasAmarillasParaA'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaA'])  : null)! ;
-    tarjetasAmarillasParaPrimerTiempo = (map['tarjetasAmarillasParaPrimerTiempo'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempo'])  : null)! ;
-    tarjetasAmarillasParaPrimerTiempoH = (map['tarjetasAmarillasParaPrimerTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempoH'])  : null)! ;
-    tarjetasAmarillasParaPrimerTiempoA = (map['tarjetasAmarillasParaPrimerTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempoA'])  : null)! ;
-    tarjetasAmarillasParaSegundoTiempo = (map['tarjetasAmarillasParaSegundoTiempo'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempo'])  : null)! ;
-    tarjetasAmarillasParaSegundoTiempoH = (map['tarjetasAmarillasParaSegundoTiempoH'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempoH'])  : null)! ;
-    tarjetasAmarillasParaSegundoTiempoA = (map['tarjetasAmarillasParaSegundoTiempoA'] != null ?  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempoA'])  : null)! ;
+    cornerPartido =  OptionsTotalGoles.fromMap(map['cornerPartido'])   ;
+    cornerParaH = OptionsTotalGoles.fromMap(map['cornerParaH'])   ;
+    cornerParaA =  OptionsTotalGoles.fromMap(map['cornerParaA'])   ;
+    cornerParaPrimerTiempo =  OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempo'])   ;
+    cornerParaPrimerTiempoH =  OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempoH'])   ;
+    cornerParaPrimerTiempoA =   OptionsTotalGoles.fromMap(map['cornerParaPrimerTiempoA'])   ;
+    cornerParaSegundoTiempo =   OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempo'])   ;
+    cornerParaSegundoTiempoH =   OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempoH'])   ;
+    cornerParaSegundoTiempoA = OptionsTotalGoles.fromMap(map['cornerParaSegundoTiempoA'])   ;
 
-    tirosPorteriaPartido = (map['tirosPorteriaPartido'] != null ?  OptionsTotalGoles.fromMap(map['tirosPorteriaPartido'])  : null)! ;
-    tirosPorteriaParaH = (map['tirosPorteriaParaH'] != null ?  OptionsTotalGoles.fromMap(map['tirosPorteriaParaH'])  : null)! ;
-    tirosPorteriaParaA = (map['tirosPorteriaParaA'] != null ?  OptionsTotalGoles.fromMap(map['tirosPorteriaParaA'])  : null)! ;
+    tarjetasAmarillasPartido =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasPartido'])   ;
+    tarjetasAmarillasParaH =   OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaH'])   ;
+    tarjetasAmarillasParaA =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaA'])   ;
+    tarjetasAmarillasParaPrimerTiempo =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempo'])   ;
+    tarjetasAmarillasParaPrimerTiempoH = OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempoH'])   ;
+    tarjetasAmarillasParaPrimerTiempoA =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaPrimerTiempoA'])   ;
+    tarjetasAmarillasParaSegundoTiempo = OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempo'])   ;
+    tarjetasAmarillasParaSegundoTiempoH =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempoH'])   ;
+    tarjetasAmarillasParaSegundoTiempoA =  OptionsTotalGoles.fromMap(map['tarjetasAmarillasParaSegundoTiempoA'])   ;
 
-    footballGolesDto = (map['footballGolesDto'] != null ?  FootballGolesDto.fromMap(map['footballGolesDto'])  : null)! ;
-    ganarPartidoConHandicapDto = (map['ganarPartidoConHandicapDto'] != null ?  GanarPartidoConHandicap.fromMap(map['ganarPartidoConHandicapDto'])  : null)! ;
-    ganarPartidoConHandicapAsiaticoDto = (map['ganarPartidoConHandicapAsiaticoDto'] != null ?  GanarPartidoConHandicapAsiatico.fromMap(map['ganarPartidoConHandicapAsiaticoDto'])  : null)! ;
+    tirosPorteriaPartido =  OptionsTotalGoles.fromMap(map['tirosPorteriaPartido'])   ;
+    tirosPorteriaParaH = OptionsTotalGoles.fromMap(map['tirosPorteriaParaH'])   ;
+    tirosPorteriaParaA = OptionsTotalGoles.fromMap(map['tirosPorteriaParaA'])   ;
 
-    totalPuntosPartido = (map['totalPuntosPartido'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPartido'])  : null)! ;
-    totalPuntosPartidoH = (map['totalPuntosPartidoH'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPartidoH'])  : null)! ;
-    totalPuntosPartidoA = (map['totalPuntosPartidoA'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPartidoA'])  : null)! ;
-    totalPuntosCuartoConMasPuntos = (map['totalPuntosCuartoConMasPuntos'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosCuartoConMasPuntos'])  : null)! ;
-    totalPuntosCuartoConMenosPuntos = (map['totalPuntosCuartoConMenosPuntos'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosCuartoConMenosPuntos'])  : null)! ;
-    totalPuntosPrimeraMitad = (map['totalPuntosPrimeraMitad'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitad'])  : null)! ;
-    totalPuntosPrimeraMitadH = (map['totalPuntosPrimeraMitadH'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitadH'])  : null)! ;
-    totalPuntosPrimeraMitadA = (map['totalPuntosPrimeraMitadA'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitadA'])  : null)! ;
-    totalPuntosSegundaMitad = (map['totalPuntosSegundaMitad'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitad'])  : null)! ;
-    totalPuntosSegundaMitadH = (map['totalPuntosSegundaMitadH'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitadH'])  : null)! ;
-    totalPuntosSegundaMitadA = (map['totalPuntosSegundaMitadA'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitadA'])  : null)! ;
-    totalPuntosC1 = (map['totalPuntosC1'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosC1'])  : null)! ;
-    totalPuntosC2 = (map['totalPuntosC2'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosC2'])  : null)! ;
-    totalPuntosC3 = (map['totalPuntosC3'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosC3'])  : null)! ;
-    totalPuntosC4 = (map['totalPuntosC4'] != null ?  TotalPuntosDesenlace.fromMap(map['totalPuntosC4'])  : null)! ;
+    print("OKOK 4");
 
-    paridadGolesPartido = (map['paridadGolesPartido'] != null ?  ParidadGolesDto.fromMap(map['paridadGolesPartido'])  : null)! ;
-    paridadGolesCasa = (map['paridadGolesCasa'] != null ?  ParidadGolesDto.fromMap(map['paridadGolesCasa'])  : null)! ;
-    paridadGolesVisitador = (map['paridadGolesVisitador'] != null ?  ParidadGolesDto.fromMap(map['paridadGolesVisitador'])  : null)! ;
-    paridadGolesPrimerTiempo = (map['paridadGolesPrimerTiempo'] != null ?  ParidadGolesDto.fromMap(map['paridadGolesPrimerTiempo'])  : null)! ;
-    paridadGolesSegundoTiempo = (map['paridadGolesSegundoTiempo'] != null ?  ParidadGolesDto.fromMap(map['paridadGolesSegundoTiempo'])  : null)! ;
+    footballGolesDto = FootballGolesDto.fromMap(map['footballGolesDto'])   ;
+    ganarPartidoConHandicapDto =  GanarPartidoConHandicap.fromMap(map['ganarPartidoConHandicapDto'])   ;
+    ganarPartidoConHandicapAsiaticoDto =  GanarPartidoConHandicapAsiatico.fromMap(map['ganarPartidoConHandicapAsiaticoDto'])   ;
 
-    prorrogaDePartidoDto = (map['prorrogaDePartidoDto'] != null ?  ProrrogaDePartidoDto.fromMap(map['prorrogaDePartidoDto'])  : null)! ;
-    basketMitadConMasPuntosDto =  (map['basketMitadConMasPuntosDto'] != null ? BasketMitadConMasPuntosDto.fromMap(map['basketMitadConMasPuntosDto'])  : null)! ;
-    basketCuartoConMasPuntosDto = (map['basketCuartoConMasPuntosDto'] != null ?  BasketCuartoConMasPuntosDto.fromMap(map['basketCuartoConMasPuntosDto'])  : null)! ;
-    basketMargenDeVictoriaDto = (map['margenDeVictoriaDto'] != null ?  BasketMargenDeVictoriaDto.fromMap(map['margenDeVictoriaDto'])  : null)! ;
-    resultadoPartidoDto = (map['resultadoPartidoDto'] != null ?  ResultadoEncuentroDto.fromMap(map['resultadoPartidoDto'])  : null)! ;
+    totalPuntosPartido =  TotalPuntosDesenlace.fromMap(map['totalPuntosPartido'])   ;
+    totalPuntosPartidoH =  TotalPuntosDesenlace.fromMap(map['totalPuntosPartidoH'])   ;
+    totalPuntosPartidoA =  TotalPuntosDesenlace.fromMap(map['totalPuntosPartidoA'])   ;
+    totalPuntosCuartoConMasPuntos =  TotalPuntosDesenlace.fromMap(map['totalPuntosCuartoConMasPuntos'])   ;
+    totalPuntosCuartoConMenosPuntos =   TotalPuntosDesenlace.fromMap(map['totalPuntosCuartoConMenosPuntos'])   ;
+    totalPuntosPrimeraMitad =  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitad'])   ;
+    totalPuntosPrimeraMitadH =  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitadH'])   ;
+    totalPuntosPrimeraMitadA =  TotalPuntosDesenlace.fromMap(map['totalPuntosPrimeraMitadA'])   ;
+    totalPuntosSegundaMitad =   TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitad'])   ;
+    totalPuntosSegundaMitadH =  TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitadH'])   ;
+    totalPuntosSegundaMitadA =  TotalPuntosDesenlace.fromMap(map['totalPuntosSegundaMitadA'])   ;
+    totalPuntosC1 =  TotalPuntosDesenlace.fromMap(map['totalPuntosC1'])   ;
+    totalPuntosC2 =  TotalPuntosDesenlace.fromMap(map['totalPuntosC2'])   ;
+    totalPuntosC3 =   TotalPuntosDesenlace.fromMap(map['totalPuntosC3'])   ;
+    totalPuntosC4 =  TotalPuntosDesenlace.fromMap(map['totalPuntosC4'])   ;
 
-    paridadCarrerasPartido = (map['paridadCarrerasPartido'] != null ?  ParidadGolesDto.fromMap(map['paridadCarrerasPartido'])  : null)! ;
-    resultadoPrimerasCincoEntradas = (map['resultadoPrimerasCincoEntradas'] != null ?  CarrerasPorEntradasDto.fromMap(map['resultadoPrimerasCincoEntradas'])  : null)! ;
-    resultadoPrimeraEntrada = (map['resultadoPrimerasCincoEntradas'] != null ?  CarrerasPorEntradasDto.fromMap(map['resultadoPrimeraEntrada'])  : null)! ;
-    resultadoSegundaEntrada =  (map['resultadoSegundaEntrada'] != null ? CarrerasPorEntradasDto.fromMap(map['resultadoSegundaEntrada'])  : null)! ;
-    extraIningsDto =  (map['extraInningsDto'] != null ? ExtraIningsDto.fromMap(map['extraInningsDto'])  : null)! ;
-    totalCarrerasDesenlacePartido =  (map['totalCarrerasDesenlacePartido'] != null ? TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePartido'])  : null)! ;
-    totalCarrerasDesenlaceH =  (map['totalCarrerasDesenlaceH'] != null ? TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceH'])  : null)! ;
-    totalCarrerasDesenlaceA =  (map['totalCarrerasDesenlaceA'] != null ? TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceA'])  : null)! ;
-    totalCarrerasDesenlacePrimeras5Carreras =  (map['totalCarrerasDesenlacePrimeras5Carreras'] != null ? TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePrimeras5Carreras'])  : null)! ;
-    totalCarrerasDesenlacePrimeraEntrada =  (map['totalCarrerasDesenlacePrimeraEntrada'] != null ? TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePrimeraEntrada'])  : null)! ;
-    totalCarrerasDesenlaceSegundaEntrada = (map['totalCarrerasDesenlaceSegundaEntrada'] != null ?  TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceSegundaEntrada'])  : null)! ;
-    primerEquipo = (map['primerEquipo'] != null ?  EquipoEnHacerCarreras.fromMap(map['primerEquipo'])  : null)! ;
-    ultimoEquipo =  (map['ultimoEquipo'] != null ? EquipoEnHacerCarreras.fromMap(map['ultimoEquipo'])  : null)! ;
+    print("OKOK 5");
 
-    primerEnHacer =  (map['primerEnHacer'] != null ? EquipoEnHacer.fromMap(map['primerEnHacer'])  : null)! ;
-    ultimoEnHacer = (map['ultimoEnHacer'] != null ?  EquipoEnHacer.fromMap(map['ultimoEnHacer'])  : null)! ;
+    paridadGolesPartido = ParidadGolesDto.fromMap(map['paridadGolesPartido'])   ;
+    paridadGolesCasa =   ParidadGolesDto.fromMap(map['paridadGolesCasa'])   ;
+    paridadGolesVisitador = ParidadGolesDto.fromMap(map['paridadGolesVisitador'])   ;
+    paridadGolesPrimerTiempo =   ParidadGolesDto.fromMap(map['paridadGolesPrimerTiempo'])   ;
+    paridadGolesSegundoTiempo =   ParidadGolesDto.fromMap(map['paridadGolesSegundoTiempo'])   ;
+
+    print("OKOK 6");
+
+
+    prorrogaDePartidoDto = ProrrogaDePartidoDto.fromMap(map['prorrogaDePartidoDto'])   ;
+
+    print("OKOK 7");
+
+
+    basketMitadConMasPuntosDto =   BasketMitadConMasPuntosDto.fromMap(map['basketMitadConMasPuntosDto'])   ;
+    basketCuartoConMasPuntosDto =  BasketCuartoConMasPuntosDto.fromMap(map['basketCuartoConMasPuntosDto'])   ;
+    basketMargenDeVictoriaDto =  BasketMargenDeVictoriaDto.fromMap(map['margenDeVictoriaDto'])   ;
+    resultadoPartidoDto =  ResultadoEncuentroDto.fromMap(map['resultadoPartidoDto'])   ;
+
+    print("OKOK 8");
+
+    paridadCarrerasPartido = ParidadGolesDto.fromMap(map['paridadCarrerasPartido'])   ;
+    resultadoPrimerasCincoEntradas = CarrerasPorEntradasDto.fromMap(map['resultadoPrimerasCincoEntradas'])   ;
+    resultadoPrimeraEntrada = CarrerasPorEntradasDto.fromMap(map['resultadoPrimeraEntrada'])   ;
+    resultadoSegundaEntrada = CarrerasPorEntradasDto.fromMap(map['resultadoSegundaEntrada'])   ;
+    extraIningsDto =   ExtraIningsDto.fromMap(map['extraInningsDto'])   ;
+    totalCarrerasDesenlacePartido =  TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePartido'])   ;
+    totalCarrerasDesenlaceH =  TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceH'])   ;
+    totalCarrerasDesenlaceA =   TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceA'])   ;
+    totalCarrerasDesenlacePrimeras5Carreras =  TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePrimeras5Carreras'])   ;
+    totalCarrerasDesenlacePrimeraEntrada =   TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlacePrimeraEntrada'])   ;
+    totalCarrerasDesenlaceSegundaEntrada =  TotalCarrerasDesenlace.fromMap(map['totalCarrerasDesenlaceSegundaEntrada'])   ;
+    primerEquipo =   EquipoEnHacerCarreras.fromMap(map['primerEquipo'])   ;
+    ultimoEquipo =  EquipoEnHacerCarreras.fromMap(map['ultimoEquipo'])   ;
+
+    print("OKOK 9");
+
+    primerEnHacer = EquipoEnHacer.fromMap(map['primerEnHacer'])   ;
+    ultimoEnHacer =  EquipoEnHacer.fromMap(map['ultimoEnHacer'])   ;
+
+    print("OKOK 10");
 
     /**
      * Tennis
      */
-    apuestaAResultadoDto =  (map['apuestaAResultadoDto'] != null ? ApuestaAResultadoDto.fromMap(map['apuestaAResultadoDto'])  : null)! ;
-    ganaPrimerSetYGanaPartido =  (map['ganaPrimerSetYGanaPartido'] != null ? GanaPrimerSetYGanaPartido.fromMap(map['ganaPrimerSetYGanaPartido'])  : null)! ;
-    pierdePrimerSetYGanaPartido = (map['pierdePrimerSetYGanaPartido'] != null ?  GanaPrimerSetYGanaPartido.fromMap(map['pierdePrimerSetYGanaPartido'])  : null)! ;
+    apuestaAResultadoDto =   ApuestaAResultadoDto.fromMap(map['apuestaAResultadoDto'])   ;
+    ganaPrimerSetYGanaPartido =   GanaPrimerSetYGanaPartido.fromMap(map['ganaPrimerSetYGanaPartido'])   ;
+    pierdePrimerSetYGanaPartido =   GanaPrimerSetYGanaPartido.fromMap(map['pierdePrimerSetYGanaPartido'])   ;
 
-    ganadorPrimerSetsDto = (map['ganadorPrimerSetsDto'] != null ?  GanadorSetDto.fromMap(map['ganadorPrimerSetsDto'])  : null)! ;
-    ganadorSegundoSetsDto = (map['ganadorSegundoSetsDto'] != null ?  GanadorSetDto.fromMap(map['ganadorSegundoSetsDto'])  : null)! ;
-    totalDeJuegos = (map['totalDeJuegos'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegos'])  : null)! ;
-    totalDeJuegosGanadosA = (map['totalDeJuegosGanadosA'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosGanadosA'])  : null)! ;
-    totalDeJuegosGanadosH = (map['totalDeJuegosGanadosH'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosGanadosH'])  : null)! ;
-    totalDeJuegosPrimerSet = (map['totalDeJuegosPrimerSet'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSet'])  : null)! ;
-    totalDeJuegosPrimerSetH = (map['totalDeJuegosPrimerSetH'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSetH'])  : null)! ;
-    totalDeJuegosPrimerSetA = (map['totalDeJuegosPrimerSetA'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSetA'])  : null)! ;
-    totalDeJuegosSegundoSet = (map['totalDeJuegosSegundoSet'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSet'])  : null)! ;
-    totalDeJuegosSegundoSetH = (map['totalDeJuegosSegundoSetH'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSetH'])  : null)! ;
-    totalDeJuegosSegundoSetA = (map['totalDeJuegosSegundoSetA'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSetA'])  : null)! ;
-    totalDeSetsDto = (map['totalDeSetsDto'] != null ?  TotalJuegosDesenlace.fromMap(map['totalDeSetsDto'])  : null)! ;
-    cantidadDeSetsDto = (map['cantidadDeSetsDto'] != null ?  CantidadDeSetsDto.fromMap(map['cantidadDeSetsDto'])  : null)! ;
+    ganadorPrimerSetsDto =  GanadorSetDto.fromMap(map['ganadorPrimerSetsDto'])   ;
+    ganadorSegundoSetsDto =   GanadorSetDto.fromMap(map['ganadorSegundoSetsDto'])   ;
+    totalDeJuegos =   TotalJuegosDesenlace.fromMap(map['totalDeJuegos'])   ;
+    totalDeJuegosGanadosA =  TotalJuegosDesenlace.fromMap(map['totalDeJuegosGanadosA'])   ;
+    totalDeJuegosGanadosH = TotalJuegosDesenlace.fromMap(map['totalDeJuegosGanadosH'])   ;
+    totalDeJuegosPrimerSet =  TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSet'])   ;
+    totalDeJuegosPrimerSetH =  TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSetH'])   ;
+    totalDeJuegosPrimerSetA =   TotalJuegosDesenlace.fromMap(map['totalDeJuegosPrimerSetA'])   ;
+    totalDeJuegosSegundoSet =   TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSet'])   ;
+    totalDeJuegosSegundoSetH =   TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSetH'])   ;
+    totalDeJuegosSegundoSetA =   TotalJuegosDesenlace.fromMap(map['totalDeJuegosSegundoSetA'])   ;
+    totalDeSetsDto = TotalJuegosDesenlace.fromMap(map['totalDeSetsDto'])   ;
+    cantidadDeSetsDto =   CantidadDeSetsDto.fromMap(map['cantidadDeSetsDto'])   ;
 
     /**
      * Boxing
      */
-    optionsTotalCompletedRoundsDosDesenlacesDto = (map['optionsTotalCompletedRoundsDosDesenlacesDto'] != null ?  OptionsTotalCompletedRoundsDosDesenlacesDto.fromMap(map['optionsTotalCompletedRoundsDosDesenlacesDto'])  : null)! ;
+    optionsTotalCompletedRoundsDosDesenlacesDto = OptionsTotalCompletedRoundsDosDesenlacesDto.fromMap(map['optionsTotalCompletedRoundsDosDesenlacesDto'])   ;
 
     /**
      * American Football
      */
-    faCuartoConMasPuntosDto = (map['faCuartoConMasPuntosDto'] != null ?  FACuartoConMasPuntosDto.fromMap(map['faCuartoConMasPuntosDto'])  : null)! ;
-    faOptionsPuntosDtoPartido = (map['faOptionsPuntosDtoPartido'] != null ?  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartido'])  : null)! ;
-    faOptionsPuntosDtoPartidoH = (map['faOptionsPuntosDtoPartidoH'] != null ?  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartidoH'])  : null)! ;
-    faOptionsPuntosDtoPartidoA = (map['faOptionsPuntosDtoPartidoA'] != null ?  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartidoA'])  : null)! ;
-    faOptionsPuntosDtoPrimeraMitad = (map['faOptionsPuntosDtoPrimeraMitad'] != null ?  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPrimeraMitad'])  : null)! ;
-    faOptionsPuntosDtoPuntosC1 = (map['faOptionsPuntosDtoPuntosC1'] != null ?  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPuntosC1'])  : null)! ;
+    faCuartoConMasPuntosDto =  FACuartoConMasPuntosDto.fromMap(map['faCuartoConMasPuntosDto'])   ;
+    faOptionsPuntosDtoPartido =   FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartido'])   ;
+    faOptionsPuntosDtoPartidoH =   FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartidoH'])   ;
+    faOptionsPuntosDtoPartidoA =  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPartidoA'])   ;
+    faOptionsPuntosDtoPrimeraMitad =  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPrimeraMitad'])   ;
+    faOptionsPuntosDtoPuntosC1 =  FAPuntosDesenlace.fromMap(map['faOptionsPuntosDtoPuntosC1'])   ;
 
 
   }

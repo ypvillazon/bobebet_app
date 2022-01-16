@@ -1,10 +1,13 @@
 class ApuestaAResultadoOptionDto {
-  String resultado ;
-  double coeff ;
+  late String resultado ;
+  late double coeff ;
 
-  ApuestaAResultadoOptionDto.fromMap(Map<String, dynamic> map) :
-    resultado = map['resultado'],
-    coeff = map['coeff'];
+  ApuestaAResultadoOptionDto.fromMap(Map<String, dynamic> map) {
+    if (map != null) {
+      resultado = map['resultado'];
+      coeff = map['coeff'];
+    }
+  }
 
 
 }

@@ -3,39 +3,42 @@ import 'dart:convert';
 
 class CarrerasPorEntradasDto {
 
-  bool available;
-  String title ;
-  String h ;
-  String d ;
-  String a ;
-  double hCoeff ;
-  double lastHCoeff;
-  int hcoeffUp;
+  late  bool available;
+  late  String title ;
+  late String h ;
+  late String d ;
+  late String a ;
+  late double hCoeff ;
+  late double lastHCoeff;
+  late int hcoeffUp;
 
-  double dCoeff ;
-  double lastDCoeff ;
-  int dcoeffUp;
+  late double dCoeff ;
+  late double lastDCoeff ;
+  late int dcoeffUp;
 
-  double aCoeff ;
-  double lastACoeff ;
-  int acoeffUp;
+  late  double aCoeff ;
+  late double lastACoeff ;
+  late int acoeffUp;
 
 
-  CarrerasPorEntradasDto.fromMap(Map<String, dynamic> map) :
-    available = map['available'],
-    title = map['title'],
-    h = map['h'],
-    d = map['d'],
-    a = map['a'],
-    hCoeff = map['hcoeff'],
-    lastHCoeff = map['lastHCoeff'],
-    hcoeffUp = map['hcoeffUp'],
-    dCoeff = map['dcoeff'],
-    lastDCoeff = map['lastDCoeff'],
-    dcoeffUp = map['dcoeffUp'],
-    aCoeff = map['acoeff'],
-    lastACoeff = map['lastACoeff'],
-    acoeffUp = map['acoeffUp'];
+  CarrerasPorEntradasDto.fromMap(Map<String, dynamic> map) {
+    if (map != null) {
+      available = map['available'];
+      title = map['title'];
+      h = map['h'];
+      d = map['d'];
+      a = map['a'];
+      hCoeff = map['hcoeff'];
+      lastHCoeff = map['lastHCoeff'];
+      hcoeffUp = map['hcoeffUp'];
+      dCoeff = map['dcoeff'];
+      lastDCoeff = map['lastDCoeff'];
+      dcoeffUp = map['dcoeffUp'];
+      aCoeff = map['acoeff'];
+      lastACoeff = map['lastACoeff'];
+      acoeffUp = map['acoeffUp'];
+    }
+  }
 
 
   String toJson() {
